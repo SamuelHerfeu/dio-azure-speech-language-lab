@@ -9,7 +9,7 @@ Documentar o processo de configuração dos recursos necessários no Azure para 
 
 ## 3. Configurações Realizadas
 1. Autenticação:
-   - Chave de acesso gerada: [REDACTED]
+   - Chave de acesso gerada
    - Endpoint: https://sentiment-analysis-dio.cognitiveservices.azure.com/
 
 2. Funcionalidades ativadas:
