@@ -1,0 +1,15 @@
+import com.azure.ai.textanalytics.TextAnalyticsClient;
+import com.azure.ai.textanalytics.TextAnalyticsClientBuilder;
+import com.azure.core.credential.AzureKeyCredential;
+
+public class SentimentAnalysis {
+    private static final String endpoint = "https://[your-endpoint].cognitiveservices.azure.com/";
+    private static final String apiKey = "[your-api-key]";
+    
+    public static TextAnalyticsClient getClient() {
+        return new TextAnalyticsClientBuilder()
+                .credential(new AzureKeyCredential(apiKey))
+                .endpoint(endpoint)
+                .buildClient();
+    }
+}
