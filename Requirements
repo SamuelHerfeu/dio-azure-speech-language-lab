@@ -1,0 +1,43 @@
+ ## 1.  Requirements
+
+    Java JDK 11+
+
+    Maven 3.6+
+
+    Azure account with Language Service enabled
+
+
+## 2. Implementation Report
+
+**Title:** Java Implementation for Sentiment Analysis
+
+**Content:**
+
+## 1. Complete Analysis Class
+
+```java
+import com.azure.ai.textanalytics.models.*;
+import java.util.List;
+
+public class SentimentAnalyzer {
+    
+    public static DocumentSentiment analyzeSentiment(String text) {
+        TextAnalyticsClient client = SentimentAnalysis.getClient();
+        return client.analyzeSentiment(text, "pt");
+    }
+    
+    public static void printAnalysis(DocumentSentiment docSentiment) {
+        System.out.println("Overall sentiment: " + docSentiment.getSentiment());
+        System.out.println("Confidence scores: Positive=" + docSentiment.getConfidenceScores().getPositive() +
+                          " Neutral=" + docSentiment.getConfidenceScores().getNeutral() +
+                          " Negative=" + docSentiment.getConfidenceScores().getNegative());
+        
+        System.out.println("\nAnalyzed sentences:");
+        for (SentenceSentiment sentence : docSentiment.getSentences()) {
+            System.out.printf(" - \"%s\" (%s)\n", 
+                sentence.getText(),
+                sentence.getSentiment());
+        }
+    }
+}
+
