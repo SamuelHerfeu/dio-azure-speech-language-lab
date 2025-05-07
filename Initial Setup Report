@@ -1,0 +1,16 @@
+Java Project Configuration for Sentiment Analysis
+
+
+Content:
+
+
+## 1. Maven Dependencies
+Add to your pom.xml:
+```xml
+<dependencies>
+    <dependency>
+        <groupId>com.azure</groupId>
+        <artifactId>azure-ai-textanalytics</artifactId>
+        <version>5.2.0</version>
+    </dependency>
+</dependencies>
