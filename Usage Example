@@ -1,0 +1,9 @@
+
+public class Main {
+    public static void main(String[] args) {
+        String text = "The product is good but the support was terrible.";
+        
+        DocumentSentiment analysis = SentimentAnalyzer.analyzeSentiment(text);
+        SentimentAnalyzer.printAnalysis(analysis);
+    }
+}
