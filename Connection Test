@@ -1,0 +1,6 @@
+
+public static void testConnection() {
+    TextAnalyticsClient client = getClient();
+    System.out.println("Language service connected successfully!");
+    System.out.println("Available operations: " + client.getServiceVersion());
+}
